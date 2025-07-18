@@ -3,17 +3,24 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Ruby's Site",
-  description: "A VitePress Site",
+  description: "A personal collection of notes, guides, and thoughts.",
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
+      { text: "About", link: "/about/关于我" },
       {
-        text: "知识库",
+        text: "Beyond Code",
+        items: [{ text: "MacOS个人配置", link: "/Beyond Code/MacOS个人配置" }],
+      },
+      {
+        text: "AI",
+        items: [{ text: "Prompt记录", link: "/AI/Prompt记录" }],
+      },
+      {
+        text: "Knowledge Base",
         items: [
-          { text: "AI", link: "/guide/AI/Prompt记录" },
-          { text: "代码之外", link: "/guide/代码之外/MacOS个人配置" },
           {
             text: "计算机网络",
             link: "/guide/计算机网络/深入浅出：从 TCP 到 HTTP，再到 HTTPS 的演进之路",
@@ -37,17 +44,17 @@ export default defineConfig({
     ],
 
     sidebar: {
-      "/guide/AI/": [
+      "/AI/": [
         {
           text: "AI",
-          base: "/guide/AI/",
+          base: "/AI/",
           items: [{ text: "Prompt记录", link: "Prompt记录" }],
         },
       ],
-      "/guide/代码之外/": [
+      "/Beyond Code/": [
         {
-          text: "代码之外",
-          base: "/guide/代码之外/",
+          text: "Beyond Code",
+          base: "/Beyond Code/",
           items: [{ text: "MacOS个人配置", link: "MacOS个人配置" }],
         },
       ],
@@ -176,5 +183,21 @@ export default defineConfig({
       message: "Released under the MIT License.",
       copyright: "Copyright © 2025-present Ruby",
     },
+  },
+
+  vite: {
+    plugins: [
+      // {
+      //   name: "vite-plugin-obsidian",
+      //   apply: "build",
+      //   config: () => ({
+      //     build: {
+      //       rollupOptions: {
+      //         input: {},
+      //       },
+      //     },
+      //   }),
+      // },
+    ],
   },
 });

@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/AI/Prompt记录
+      link: /about/关于我.md
     - theme: alt
       text: View on GitHub
       link: https://github.com/rubyceng

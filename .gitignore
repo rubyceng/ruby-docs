@@ -1,3 +1,7 @@
 node_modules
 .vscode
 docs/.vitepress/cache
+docs/guide/.obsidian/workspace.json
+docs/guide/.obsidian/graph.json
+dist
+.env
