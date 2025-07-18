@@ -25,11 +25,11 @@ export default defineConfig({
       { text: "👤 About", link: "/about/关于我" },
       {
         text: "💻 Beyond Code",
-        items: [{ text: "MacOS个人配置", link: "/Beyond Code/MacOS个人配置" }],
+        items: [{ text: "MacOS个人配置", link: "/beyond_code/MacOS个人配置" }],
       },
       {
         text: "🤖 AI",
-        items: [{ text: "Prompt记录", link: "/AI/Prompt记录" }],
+        items: [{ text: "Prompt记录", link: "/ai/Prompt记录" }],
       },
       {
         text: "📖 Knowledge Base",
@@ -56,17 +56,17 @@ export default defineConfig({
     ],
 
     sidebar: {
-      "/AI/": [
+      "/ai/": [
         {
           text: "AI",
-          base: "/AI/",
+          base: "/ai/",
           items: [{ text: "Prompt记录", link: "Prompt记录" }],
         },
       ],
-      "/Beyond Code/": [
+      "/beyond_code/": [
         {
           text: "Beyond Code",
-          base: "/Beyond Code/",
+          base: "/beyond_code/",
           items: [{ text: "MacOS个人配置", link: "MacOS个人配置" }],
         },
       ],
