@@ -169,13 +169,6 @@ export default defineConfig({
       provider: "local",
     },
 
-    // Git-based info
-    editLink: {
-      pattern:
-        "https://github.com/rubyceng/vitepress-demo/edit/main/docs/:path",
-      text: "Edit this page on GitHub",
-    },
-
     // --- END OF NEW CONFIGURATIONS ---
 
     socialLinks: [{ icon: "github", link: "https://github.com/rubyceng" }],
