@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "开发/代码规范小结-TS,Java相关.md",
+                "file": "架构设计/🐳 构建一个健壮的DDD领域驱动设计架构.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "代码规范小结-TS,Java相关"
+              "title": "🐳 构建一个健壮的DDD领域驱动设计架构"
             }
           }
         ]
@@ -142,21 +142,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "开发/代码规范小结-TS,Java相关.md",
+                "file": "架构设计/🐳 构建一个健壮的DDD领域驱动设计架构.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "代码规范小结-TS,Java相关 的大纲"
+              "title": "🐳 构建一个健壮的DDD领域驱动设计架构 的大纲"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,6 +168,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b21e530e5db7847a",
-  "lastOpenFiles": []
+  "active": "5ef204b1f5b20f05",
+  "lastOpenFiles": [
+    "开发/代码规范小结-TS,Java相关.md",
+    "架构设计/🐳 构建一个健壮的DDD领域驱动设计架构.md",
+    "代码之外/MacOS个人配置.md"
+  ]
 }
