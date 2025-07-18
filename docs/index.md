@@ -43,5 +43,4 @@ features:
   border: 5px solid rgb(168, 177, 255) !important;
 }
 
-
 </style>
