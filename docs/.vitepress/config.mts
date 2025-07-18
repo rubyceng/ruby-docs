@@ -4,22 +4,35 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Ruby's Site",
   description: "A personal collection of notes, guides, and thoughts.",
+  head: [
+    ["link", { rel: "icon", href: "/favicon.ico" }],
+    [
+      "link",
+      {
+        rel: "preload",
+        href: "/assets/inter-roman-latin.Di8DUHzh.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
+      },
+    ],
+  ],
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
-      { text: "About", link: "/about/关于我" },
+      { text: "🏠 Home", link: "/" },
+      { text: "👤 About", link: "/about/关于我" },
       {
-        text: "Beyond Code",
+        text: "💻 Beyond Code",
         items: [{ text: "MacOS个人配置", link: "/Beyond Code/MacOS个人配置" }],
       },
       {
-        text: "AI",
+        text: "🤖 AI",
         items: [{ text: "Prompt记录", link: "/AI/Prompt记录" }],
       },
       {
-        text: "Knowledge Base",
+        text: "📖 Knowledge Base",
         items: [
           {
             text: "计算机网络",
@@ -33,7 +46,6 @@ export default defineConfig({
             text: "架构设计",
             link: "/guide/架构设计/ORM设计模式：Active Record 和 Data Mapper",
           },
-          { text: "开发", link: "/guide/开发/代码规范小结-TS,Java相关" },
           {
             text: "数据库",
             link: "/guide/数据库/高并发下的竞态插入问题",
@@ -122,13 +134,7 @@ export default defineConfig({
           ],
         },
       ],
-      "/guide/开发/": [
-        {
-          text: "开发",
-          base: "/guide/开发/",
-          items: [{ text: "代码规范小结", link: "代码规范小结-TS,Java相关" }],
-        },
-      ],
+
       "/guide/数据库/": [
         {
           text: "数据���",
@@ -167,6 +173,14 @@ export default defineConfig({
     // Search
     search: {
       provider: "local",
+    },
+
+    lastUpdated: {
+      text: "Updated at",
+      formatOptions: {
+        dateStyle: "full",
+        timeStyle: "medium",
+      },
     },
 
     // --- END OF NEW CONFIGURATIONS ---

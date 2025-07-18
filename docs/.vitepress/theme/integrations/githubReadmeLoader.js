@@ -1,18 +1,3 @@
-// docs/.vitepress/theme/integrations/githubReadmeLoader.js
-
-// Helper function to decode Base64
-function decodeBase64(str) {
-  if (typeof window !== 'undefined') {
-    // Browser environment
-    return decodeURIComponent(atob(str).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-  } else {
-    // Node.js environment
-    return Buffer.from(str, 'base64').toString('utf-8');
-  }
-}
-
 export default {
   async load() {
     const GITHUB_USERNAME = "rubyceng";
@@ -21,7 +6,7 @@ export default {
 
     const headers = {
       // Requesting the raw content
-      'Accept': 'application/vnd.github.v3.raw',
+      Accept: "application/vnd.github.v3.raw",
     };
 
     if (GITHUB_TOKEN) {
@@ -42,8 +27,9 @@ export default {
       }
 
       const content = await response.text();
-      return { content };
+      console.log("GitHub README content fetched successfully:", content);
 
+      return { content };
     } catch (error) {
       console.error("Error fetching GitHub README:", error);
       return { content: "" };

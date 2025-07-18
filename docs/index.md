@@ -29,3 +29,19 @@ features:
     details: From TCP/IP fundamentals to NGINX/SSL configurations.
     link: /guide/计算机网络/深入浅出：从 TCP 到 HTTP，再到 HTTPS 的演进之路
 ---
+
+<style>
+/* 头像圆形和背景高光效果 */
+.VPHero .image {
+  position: relative !important;
+}
+
+.VPHero .image .VPImage {
+  border-radius: 50% !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 
+              0 0 40px rgba(var(--vp-c-brand-rgb), 0.3) !important;
+  border: 5px solid rgb(168, 177, 255) !important;
+}
+
+
+</style>
