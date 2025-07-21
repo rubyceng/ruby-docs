@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "891b979e631ca907",
+        "id": "3ff84e29a7a1c72d",
         "type": "tabs",
         "children": [
           {
-            "id": "e020ae5fe2fe7620",
+            "id": "b24647d1ab16dc2f",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,14 +161,17 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "8c3d45f9ee250b10",
+  "active": "b24647d1ab16dc2f",
   "lastOpenFiles": [
-    "ai/产品原型设计.md",
+    "ai/项目搭建工程师.md",
     "ai/ERP项目学习.md",
+    "ai/PROMPT助手.md",
+    "ai/产品原型设计.md",
+    "guide/技术堆栈/Flutter/Flutter学习记录.md",
+    "beyond_code/MacOS个人配置.md",
     "ai",
     "AI/ERP项目学习.md",
     "AI/产品原型设计.md",
-    "AI/Prompt记录.md",
-    "beyond_code/MacOS个人配置.md"
+    "AI/Prompt记录.md"
   ]
 }
