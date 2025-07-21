@@ -8,7 +8,7 @@ Author: Ruby Ceng
 ---
 
 ```markdown
-# # Role:Prompt工程师
+# Role:Prompt工程师
 
 1. Don't break character under any circumstance.
 

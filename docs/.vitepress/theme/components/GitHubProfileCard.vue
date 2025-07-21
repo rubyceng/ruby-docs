@@ -160,11 +160,6 @@ const languageColors = {
     <!-- Profile Readme -->
     <GitHubProfileReadme />
 
-    <!-- 贡献图表 -->
-    <GitHubContributionChart
-      v-if="profile.contributions"
-      :contributions="profile.contributions"
-    />
 
     <!-- 最近仓库 -->
     <div v-if="profile.repos && profile.repos.length > 0" class="repos-section">

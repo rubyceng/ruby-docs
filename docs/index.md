@@ -16,18 +16,20 @@ hero:
       link: https://github.com/rubyceng
 
 features:
+  - title: "About Me"
+    icon: "😈"
+    details: 夜晚的水母不会游泳.
+    link: /about/关于我.md
+
   - title: "Tech Stack"
     icon: "💻"
-    details: In-depth guides and notes on TypeScript, Flutter, Prisma, and more.
+    details: 相关的技术堆栈学习记录.
     link: /guide/技术堆栈/Flutter/Flutter学习记录
-  - title: "Architecture"
-    icon: "🏗️"
-    details: Best practices on DDD, ORM design patterns, and building robust systems.
-    link: /guide/架构设计/ORM设计模式：Active Record 和 Data Mapper
-  - title: "Networking & Ops"
-    icon: "🌐"
-    details: From TCP/IP fundamentals to NGINX/SSL configurations.
-    link: /guide/计算机网络/深入浅出：从 TCP 到 HTTP，再到 HTTPS 的演进之路
+
+  - title: "Beyond Code"
+    icon: "🌍"
+    details: 在代码之外，在世界之内.
+    link: /beyond_code/MacOS个人配置
 ---
 
 <style>

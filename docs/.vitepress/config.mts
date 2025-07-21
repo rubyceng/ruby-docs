@@ -38,6 +38,14 @@ export default defineConfig({
             text: "ERP项目学习",
             link: "/ai/ERP项目学习",
           },
+          {
+            text: "PROMPT助手",
+            link: "/ai/PROMPT助手",
+          },
+          {
+            text: "项目搭建工程师",
+            link: "/ai/项目搭建工程师",
+          },
         ],
       },
       {
@@ -72,6 +80,8 @@ export default defineConfig({
           items: [
             { text: "ERP项目学习", link: "ERP项目学习" },
             { text: "产品原型设计", link: "产品原型设计" },
+            { text: "PROMPT助手", link: "PROMPT助手" },
+            { text: "项目搭建工程师", link: "项目搭建工程师" },
           ],
         },
       ],
