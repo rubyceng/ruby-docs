@@ -41,7 +41,6 @@ brew list
 brew tap Brewforge/homebrew-chinese
 ```
 
-
 ## Software
 
 接下来就是安装一些常用软件了，软件的安装秉持如下三个原则：
@@ -53,128 +52,151 @@ brew tap Brewforge/homebrew-chinese
 ### 1. 工具
 
 **[Surge](https://nssurge.com/)**
-*作用*：代理 | *渠道*：官网 | *价格*：拼车均价 ¥140  左右，官网$50 不太推荐。
+_作用_：代理 | _渠道_：官网 | _价格_：拼车均价 ¥140 左右，官网$50 不太推荐。
+
 > 程序员建议上个 Surge，内穿抓包都相当方便。
 > **替代**：
-> [clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev.git) | *渠道*：GitHub | 价格*：免费。
->  作者一直在积极维护，Win 我也是用的这个。
+> [clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev.git) | _渠道_：GitHub | 价格\*：免费。
+> 作者一直在积极维护，Win 我也是用的这个。
 
 **[Warp](https://www.warp.dev/)**
-*作用*：终端 | *渠道*：HomeBrew | *价格*：免费
+_作用_：终端 | _渠道_：HomeBrew | _价格_：免费
+
 > 界面好看，支持 AI 补全，缺点是联网登陆，不建议公司内使用。
 > **替代**：
-> **[Ghosty](https://ghostty.org/)** | *渠道*：HomeBrew | *价格*：免费。
->  公司我用的是这个，相比 Iterm 2 更加轻量，用 Rust 写的。
+> **[Ghosty](https://ghostty.org/)** | _渠道_：HomeBrew | _价格_：免费。
+> 公司我用的是这个，相比 Iterm 2 更加轻量，用 Rust 写的。
 
 **[Cork](https://corkmac.app/)**
-*作用*：HomeBrew GUI | *渠道*：Github | *价格*：免费/25 欧
+_作用_：HomeBrew GUI | _渠道_：Github | _价格_：免费/25 欧
+
 > 界面简洁好看，自己打包是免费的有一定门槛可以看看 README，也可以购买支持作者。
 
 **[OrbStack](https://orbstack.dev/)**
-*作用*：容器管理 | *渠道*：HomeBrew | *价格*：免费
+_作用_：容器管理 | _渠道_：HomeBrew | _价格_：免费
+
 > 轻量化的容器管理，也可以创建虚拟机。
 
 **[Mos](https://mos.caldis.me/)**
-*作用*：鼠标工具 | *渠道*：HomeBrew | *价格*：免费
+_作用_：鼠标工具 | _渠道_：HomeBrew | _价格_：免费
+
 > 解决 Mac 鼠标连接和触控板反向的问题，还可以让鼠标滚动变得号丝话啊。
 
 **[Coteditor](https://coteditor.com/)**
-*作用*：文本编辑 | *渠道*：AppStore | *价格*：免费
+_作用_：文本编辑 | _渠道_：AppStore | _价格_：免费
+
 > 轻量文本编辑器。
 
 **[The-unarchiver](https://theunarchiver.com/)**
-*作用*：多格式解压缩 | *渠道*：AppStore | *价格*：免费
+_作用_：多格式解压缩 | _渠道_：AppStore | _价格_：免费
+
 > 基本支持所有压缩格式，轻量。
 
 **[Parallel-Desktop](https://www.parallels.com/)**
-*作用*：虚拟机 | *渠道*：AppStore | *价格*：¥349/年
+_作用_：虚拟机 | _渠道_：AppStore | _价格_：¥349/年
+
 > Mac 最著名的虚拟机软件，我是买电脑送了两年。
 > **替代**：
-> **[VMware Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)** | *渠道*：HomeBrew | *价格*：免费。
+> **[VMware Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)** | _渠道_：HomeBrew | _价格_：免费。
 > 之前看别人分享是有免费版的，PD 到期后再转移到这上面。
 
 **[RustDesk](https://rustdesk.com/zh-cn/)**
-*作用*：远程控制 | *渠道*：HomeBrew | *价格*：免费
-> 自托管远程控制工具，我的3m的小水管，只能勉强跑30帧
+_作用_：远程控制 | _渠道_：HomeBrew | _价格_：免费
+
+> 自托管远程控制工具，我的 3m 的小水管，只能勉强跑 30 帧
 
 **[PixPin](https://pixpin.cn/)**
-*作用*：截图软件 | *渠道*：HomeBrew | *价格*：免费
+_作用_：截图软件 | _渠道_：HomeBrew | _价格_：免费
+
 > 国产的截图软件，支持长截图，阴影，圆角等。
 > **替代**：
-> **[Snipaste](https://www.snipaste.com/)** | *渠道*：HomeBrew | *价格*：免费。
+> **[Snipaste](https://www.snipaste.com/)** | _渠道_：HomeBrew | _价格_：免费。
 > 开源轻量好用的截图软件，功能少一点，但是相当纯粹干净。
 
 **[Easydict](https://github.com/tisfeng/Easydict)**
-*作用*：翻译软件 | *渠道*：HomeBrew | *价格*：免费
+_作用_：翻译软件 | _渠道_：HomeBrew | _价格_：免费
+
 > 我知道有人说 Bob，这个软件和 Bob 操作逻辑基本一致，缺少 ocr 功能，但是开源免费。
-> **替代：**
-> [Bob](https://bobtranslate.com/) | *渠道*：AppStore | *价格*：几十块忘了。
+> **替代：** > [Bob](https://bobtranslate.com/) | _渠道_：AppStore | _价格_：几十块忘了。
 > 简洁好用，支持 OCR。
 
 **[Ice](https://icemenubar.app/)**
-*作用*：菜单栏工具 | *渠道*：HomeBrew | *价格*：免费
+_作用_：菜单栏工具 | _渠道_：HomeBrew | _价格_：免费
+
 > MacBook 的刘海屏导致必须要用一个管理工具来看，这个软件功能齐全而且相当简洁，缺点是需要录屏权限来实现自定义的悬浮 Bar，介意勿入。
 
 **[NotchNook](https://lo.cafe/notchnook)**
-*作用*：灵动岛 | *渠道*：HomeBrew | *价格*：¥100
+_作用_：灵动岛 | _渠道_：HomeBrew | _价格_：¥100
+
 > MacBook 自己的灵动岛，之前的版本可以支持管理在线播放，放小组件等，这个只能等开发者适配了。纯美化软件。
 
 ### 2. 开发
 
 **[Cursor](https://www.cursor.com/)**
-*作用*：AI IDE | *渠道*：HomeBrew | *价格*：$20
+_作用_：AI IDE | _渠道_：HomeBrew | _价格_：$20
+
 > 习惯了之后开发非常丝滑，目前的主要开发 IDE。但是现在请求上下文越来越短了。主要补全是我用过最好用的。
 
 **Xcode**
-*作用*：IOS IDE | *渠道*：Appstore | *价格*：免费
+_作用_：IOS IDE | _渠道_：Appstore | _价格_：免费
+
 > IOS 打包必备的 IDE。
 
 **[Dbeaver-community](https://dbeaver.io/download/)**
-*作用*：数据库客户端 | *渠道*：HomeBrew | *价格*：免费
+_作用_：数据库客户端 | _渠道_：HomeBrew | _价格_：免费
+
 > 开源免费，更新频率也快。
 
 **[Fork](https://git-fork.com/)**
-*作用*：Git GUI | *渠道*：HomeBrew | *价格*：免费
+_作用_：Git GUI | _渠道_：HomeBrew | _价格_：免费
+
 > 非强制收费，会有支持弹窗。界面接近原生，简洁好看，最好用的 Git GUI。
 
 **[ApiFox](https://apifox.com/)**
-*作用*：接口测试 | *渠道*：HomeBrew | *价格*：免费
-> 国产测试软件，相比 Postman优点是ui和操作比较美观便捷，缺点是比较重型。
+_作用_：接口测试 | _渠道_：HomeBrew | _价格_：免费
+
+> 国产测试软件，相比 Postman 优点是 ui 和操作比较美观便捷，缺点是比较重型。
 
 **[Mos](https://mos.caldis.me/)**
-*作用*：鼠标工具 | *渠道*：HomeBrew | *价格*：免费
+_作用_：鼠标工具 | _渠道_：HomeBrew | _价格_：免费
+
 > 解决 Mac 鼠标连接和触控板反向的问题，还可以让鼠标滚动变得号丝话啊。
-
-
 
 ### 3. 社媒
 
 **微信**
-*作用*：国内社交 | *渠道*：AppStore | *价格*：免费
+_作用_：国内社交 | _渠道_：AppStore | _价格_：免费
+
 > 小而美。
 
 **网易云音乐**
-*作用*：听歌软件 | *渠道*：AppStore | *价格*：免费
+_作用_：听歌软件 | _渠道_：AppStore | _价格_：免费
+
 > 离不开日推，88 vip 赠送了年费，四舍五入不要钱。
 
 **剪映**
-*作用*：剪辑软件 | *渠道*：AppStore | *价格*：免费
+_作用_：剪辑软件 | _渠道_：AppStore | _价格_：免费
+
 > 简单易上手，剪 Vlog 用。
 
 **Obsidian**
-*作用*：笔记软件 | *渠道*：HomeBrew | *价格*：免费 / 增值服务
+_作用_：笔记软件 | _渠道_：HomeBrew | _价格_：免费 / 增值服务
+
 > 插件生态强大，我是用 git 插件来实现多设备同步的。
 
 **WPS Office**
-*作用*：办公软件 | *渠道*：AppStore | *价格*：免费/增值服务
+_作用_：办公软件 | _渠道_：AppStore | _价格_：免费/增值服务
+
 > Mac 上 WPS 的响应速度感觉比 Office 快很多，缺点是应用内有推销横幅。
 
 **Google-Chrome**
-*作用*：浏览器 | *渠道*：HomeBrew | *价格*：免费
+_作用_：浏览器 | _渠道_：HomeBrew | _价格_：免费
+
 > 多设备同步以及上手习惯还是 Chrome 好用，很看好 Gemini 对各个软件的整合。
 
 **夸克云盘**
-*作用*：网盘 | *渠道*：HomeBrew | *价格*：免费/增值服务
+_作用_：网盘 | _渠道_：HomeBrew | _价格_：免费/增值服务
+
 > 一年鱼上就 100，便宜大碗，虽然我有 Google One，但是数据全在国外比较没安全感。
 
 ## System
@@ -224,18 +246,18 @@ source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
 fi
 
-  
-  
+
+
 
 ## oh-my-zsh
 
 export ZSH="$HOME/.oh-my-zsh"
 
-  
+
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-  
+
 
 # zsh-autosuggestions: 命令提示插件，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。
 
@@ -245,20 +267,20 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 
-  
+
 
 source $ZSH/oh-my-zsh.sh
 
-  
+
 
 [[ -f /Users/rubyceng/.dart-cli-completion/zsh-config.zsh ]] && . /Users/rubyceng/.dart-cli-completion/zsh-config.zsh || true
 
-  
+
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
-  
-  
+
+
 
 ## nvm
 
@@ -269,7 +291,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 ```
-##  Develop
+
+## Develop
 
 > 相关开发环境以 HomeBrew 统一管理，全部按需安装。如果自己使用 HomeBrew 安装的部分可以略过对应部分的内容。
 
@@ -433,12 +456,11 @@ fvm flutter doctor --android-licenses
 fvm flutter doctor
 ```
 
-
 ### 4. Java 相关环境
 
 ```bash
 
-# 例如，安装 OpenJDK 17 
+# 例如，安装 OpenJDK 17
 brew install openjdk@17
 
 # 设置环境变量

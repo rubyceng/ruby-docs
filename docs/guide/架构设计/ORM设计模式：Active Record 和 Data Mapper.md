@@ -7,13 +7,14 @@ tags:
 Author: Ruby Ceng
 ---
 
-## 前言
+## 引言
 
 在与数据库打交道的应用开发中，[对象关系映射（ORM）](https://zh.wikipedia.org/wiki/对象关系映射)是不可或缺的一环。它允许我们使用面向对象的方式来操作数据库，而不是手写繁琐的 SQL 语句。在众多 ORM 实现中，其核心思想主要源于两种经典的设计模式：**Active Record** 和 **Data Mapper**。理解这两种模式的差异，能帮助我们根据项目需求选择最合适的工具和架构。
 
 这篇笔记将探讨这两种模式的核心理念，并分别使用 `TypeORM` 进行代码示例。
 
 > [TypeORM](https://typeorm.io/) 是一个流行的 TypeScript ORM，它同时支持 **Active Record** 和 **Data Mapper** 两种模式。
+
 ## 一、Active Record（活动记录）模式 —— 数据与行为合一
 
 > WIKI 给出的解释如下：

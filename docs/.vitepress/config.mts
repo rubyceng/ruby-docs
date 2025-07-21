@@ -29,7 +29,16 @@ export default defineConfig({
       },
       {
         text: "🤖 AI",
-        items: [{ text: "Prompt记录", link: "/ai/Prompt记录" }],
+        items: [
+          {
+            text: "产品原型设计",
+            link: "/ai/产品原型设计",
+          },
+          {
+            text: "ERP项目学习",
+            link: "/ai/ERP项目学习",
+          },
+        ],
       },
       {
         text: "📖 Knowledge Base",
@@ -60,7 +69,10 @@ export default defineConfig({
         {
           text: "AI",
           base: "/ai/",
-          items: [{ text: "Prompt记录", link: "Prompt记录" }],
+          items: [
+            { text: "ERP项目学习", link: "ERP项目学习" },
+            { text: "产品原型设计", link: "产品原型设计" },
+          ],
         },
       ],
       "/beyond_code/": [
@@ -77,7 +89,7 @@ export default defineConfig({
           items: [
             {
               text: "TCP/HTTP/HTTPS 演进之路",
-              link: "深入浅���：从 TCP 到 HTTP，再到 HTTPS 的演进之路",
+              link: "深入浅出：从 TCP 到 HTTP，再到 HTTPS 的演进之路",
             },
           ],
         },

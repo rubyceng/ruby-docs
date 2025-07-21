@@ -8,8 +8,6 @@ tags:
 Author: Ruby Ceng
 ---
 
-# Flutter 初级
-
 **路线：**
 
 > GSY 学习项目：`https://guoshuyu.cn/home/wx/Flutter-0.html`
@@ -104,8 +102,7 @@ fvm flutter run -d chrome
 
 > 模拟器是在您的 Mac 上运行的虚拟 iPhone 或 iPad，用来测试您的 iOS 应用。Flutter 需要知道您安装了哪些版本的模拟器才能在上面运行 App。
 
-
-安装 Cocoapods  apple 原生相关的 Sdk 库：
+安装 Cocoapods apple 原生相关的 Sdk 库：
 
 > **这是什么？** **CocoaPods** 是一个针对 macOS 和 iOS 项目的**依赖包管理器**，非常重要。许多 Flutter 插件（比如相机、地图、分享等）都需要依赖原生的库，而 CocoaPods 就是用来自动管理这些原生库的工具。
 

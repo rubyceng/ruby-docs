@@ -8,11 +8,11 @@ tags:
 Author: Ruby Ceng
 ---
 
+## 引言
+
 领域驱动设计（DDD）不仅仅是一种技术，更是一种思想、一种方法论。它旨在通过将软件的核心复杂性与业务领域模型紧密对齐，来构建出易于维护、扩展且能精准反映业务需求的软件系统。传统的 MVC 或三层架构在处理复杂业务时，常常会导致逻辑泄露、Service 层臃肿（Fat Service）和贫血领域模型等问题，使得系统随着业务增长而变得难以驾驭。
 
 本文将通过我们共同构建一个“小超市 ERP 结算系统”的完整历程，深度梳理并总结如何搭建一个真正健壮、清晰的 DDD 架构。我们将从架构蓝图开始，深入探讨每一个核心概念，并用具体的代码示例来展示它们是如何协同工作的。
-
----
 
 ## 蓝图：DDD 分层架构总览
 
@@ -154,7 +154,7 @@ export abstract class OrderRepository {
 
 注意，这里只有抽象方法，没有任何 Prisma 或 SQL 的痕迹。它的具体实现 `PrismaOrderRepository` 被放在了基础设施层。这正是**依赖倒置原则**的最佳体现。
 
-### <span id="service-vs-event">4. 领域服务 (Domain Service) vs. 领域事件 (Domain Event)</span> 
+### <span id="service-vs-event">4. 领域服务 (Domain Service) vs. 领域事件 (Domain Event)</span>
 
 这是 DDD 中两个极易混淆但功能迥异的工具，用于处理跨聚合的交互。
 
@@ -203,7 +203,7 @@ export abstract class OrderRepository {
 
 ## 核心原则与拓展思考
 
-- **聚合根绝不能调用仓储**：领域核心必须保持纯净。让聚合根调用仓储会污染领域、破坏事务边界、并使单元测试变得极其困难。对于跨领域的查写操作，两种做法：1. 在领域服务编排层进行Repository 抽象类的调用。2. 在 Repository 内使用领域事件。孰优孰劣在[领域服务 (Domain Service) vs. 领域事件 (Domain Event)](#service-vs-event)
+- **聚合根绝不能调用仓储**：领域核心必须保持纯净。让聚合根调用仓储会污染领域、破坏事务边界、并使单元测试变得极其困难。对于跨领域的查写操作，两种做法：1. 在领域服务编排层进行 Repository 抽象类的调用。2. 在 Repository 内使用领域事件。孰优孰劣在[领域服务 (Domain Service) vs. 领域事件 (Domain Event)](#service-vs-event)
 - **可靠的领域事件**：一个简单的内存 `EventEmitter` 在生产中是不可靠的。为了保证事件不丢失（例如，一个订阅者失败了），在单体项目中使用，我们需要引入**“事务性发件箱”模式**。而在微服务中，则需要引入消息队列。
 - CQRS：查写分离。
 
