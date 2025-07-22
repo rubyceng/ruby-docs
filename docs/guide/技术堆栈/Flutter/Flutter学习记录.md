@@ -12,7 +12,9 @@ Author: Ruby Ceng
 
 > GSY 学习项目：`https://guoshuyu.cn/home/wx/Flutter-0.html`
 
-## 一、起步
+> 文档源码：`https://github.com/rubyceng/github-client-flutter.git`
+
+## 起步
 
 ### 安装 FVM 与 Flutter SDK
 
@@ -346,154 +348,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
 }
 ```
 
-## 二、Dart 语言
-
-> Dart 语言 JavaScript 工程师迁移学习文档：
-> `https://dart.dev/resources/coming-from/js-to-dart#conventions-and-linting`
-
-### Dart 数据类型
-
-| Dart 类型   | 说明              | 等价的 TypeScript 类型  | 关键区别与备注                                               |
-| ----------- | ----------------- | ----------------------- | ------------------------------------------------------------ |
-| `int`       | 整数              | `number`                | Dart 明确区分整数和浮点数。                                  |
-| `double`    | 浮点数            | `number`                | TS 的 `number` 涵盖了 Dart 的 `int` 和 `double`。            |
-| `num`       | `int` 或 `double` | `number`                | 这是与 TS `number` 最接近的对等体。                          |
-| `String`    | 字符串            | `string`                | 功能几乎一样，多行字符串语法不同。                           |
-| `bool`      | 布尔值            | `boolean`               | **Dart 更严格**，没有 "truthy/falsy" 的概念。                |
-| `List<T>`   | 有序列表（数组）  | `Array<T>` 或 `T[]`     | **完全等同。**                                               |
-| `Set<T>`    | 唯一项的无序集合  | `Set<T>`                | **完全等同。**                                               |
-| `Map<K, V>` | 键值对集合        | `Map<K, V>` 或对象/接口 | Dart 更倾向于用 `Map` 表示动态对象，而 TS 常用 `interface`。 |
-
-### Dart 变量关键字：const, final, var
-
-#### 核心定义
-
-- **`const`**: 编译时常量。其值在代码编译那一刻就必须确定。用于性能优化。
-- **`final`**: 运行时常量。变量只能被赋值一次，其值在程序运行时确定。保证了不可变性。
-- **`var`**: 变量。它的值可以被多次修改。类型由第一次赋值时推断并确定。
-
-#### 使用方法
-
-1. **`const`**
-
-   Dart
-
-   ```
-   // 用于定义应用中永不改变的常量
-   const Duration timeout = Duration(seconds: 5);
-   const String appName = 'My Awesome App';
-
-   // 用于不会改变的 Flutter Widget 以优化性能
-   const Text('Hello, World!');
-   ```
-
-2. **`final`**
-
-   Dart
-
-   ```
-   // 用于只需赋值一次的变量，例如 Widget 的属性或 API 返回值
-   final String userId = fetchUserId(); // fetchUserId() 是一个运行时函数
-   final apiResponse = await http.get(url);
-
-   class MyWidget extends StatelessWidget {
-     final String title; // Widget 属性必须是 final
-     const MyWidget({super.key, required this.title});
-   }
-   ```
-
-3. **`var`**
-
-   Dart
-
-   ```
-   // 用于值需要改变的局部变量
-   var counter = 0;
-   counter = counter + 1;
-
-   for (var i = 0; i < 5; i++) {
-     print(i);
-   }
-   ```
-
-**黄金法则 (何时使用):**
-
-- **首选 `const`**：如果值在编译时就确定。
-- **其次 `final`**：如果变量只需赋值一次。
-- **最后 `var`**：如果变量的值确实需要改变。
-
----
-
-### Dart 空安全 (Null Safety)
-
-#### 核心定义
-
-一种语言特性，规定变量默认不可为空（non-nullable）。这意味着，除非你显式声明，否则变量不能持有 `null` 值。其目的是在编译时就消灭“空引用”错误。
-
-- **不可空类型 (默认)**：变量不能为 `null`。
-  Dart
-  ```
-  String name = "Dash"; // 正确
-  // name = null; // 编译错误
-  ```
-- **可空类型 (需显式声明)**：在类型后加 `?`，表示该变量可以为 `null`。
-  Dart
-  ```
-  String? address; // 正确，address 默认为 null
-  address = "123 Main St"; // 正确
-  ```
-
-#### 使用方法
-
-在使用可空类型时，编译器会强制你进行安全检查，以防止在 `null` 上调用方法或属性。
-
-1. **空值检查**
-
-   Dart
-
-   ```
-   void printAddressLength(String? address) {
-     if (address != null) {
-       // 在这个代码块内，编译器确认 address 不为 null
-       print(address.length);
-     }
-   }
-   ```
-
-2. **关键操作符**
-
-   - `?.` **(可选链操作符)**: 如果对象不为 `null`，则调用其方法或属性；否则，整个表达式返回 `null`。
-     Dart
-     ```
-     int? length = address?.length;
-     ```
-   - `!` **(非空断言)**: 告诉编译器“我确信这个变量此刻不为 `null`”。如果它实际上是 `null`，你的程序将在运行时崩溃。请谨慎使用。
-     Dart
-     ```
-     int length = address!; // 如果 address 是 null，这里会抛出异常
-     ```
-   - `??` **(空值合并操作符)**: 如果左侧表达式的结果是 `null`，则返回右侧的值。
-     Dart
-     ```
-     String currentAddress = address ?? "No Address Provided";
-     ```
-   - `late` **(延迟初始化)**: 向编译器承诺，你会在使用一个非空变量之前对它进行初始化。
-     Dart
-
-     ```
-
-     class MyService {
-       late final String _apiKey; // 声明一个非空变量
-
-       void initialize() {
-         _apiKey = _fetchApiKey(); // 在使用前进行初始化
-       }
-
-       String _fetchApiKey() => "some_secret_key";
-     }
-     ```
-
-## 三、Flutter 相关
+## Flutter 相关
 
 > Flutter 中文文档：
 > `https://docs.flutter.cn/get-started/fundamentals/widgets`
@@ -647,7 +502,7 @@ class _BottomTabbarDemoState extends State<BottomTabbarDemo> {
 
 在将应用扩展到桌面端（如 macOS）时，会遇到 `PageView` 默认无法通过鼠标拖动来滑动的问题。
 
-**根源**：Flutter 为了遵循平台原生体验，在桌面端的默认 `ScrollBehavior` (滚动行为) 中，并未将鼠标左键拖动视为“滚动”手势。
+**根源**：Flutter 为了遵循平台原生体验，在桌面端的默认 `ScrollBehavior` (滚动行为) 中，并未将鼠标左键拖动视为"滚动"手势。
 
 **解决方案**：自定义 `ScrollBehavior`，明确告诉 Flutter 允许鼠标进行拖动滚动。
 
@@ -1093,7 +948,6 @@ class DeeplyNestedButton extends StatelessWidget {
 | InheritedWidget         | 跨层级状态共享     | Flutter 官方，高效   | 样板代码多，使用复杂   |
 | Provider+ChangeNotifier | 中大型应用状态管理 | 功能强大，社区成熟   | 学习成本，依赖第三方库 |
 | Notification            | 事件通知           | 解耦性好，事件冒泡   | 仅适用于通知场景       |
-|                         |                    |                      |                        |
 
 #### 建议
 
@@ -1423,3 +1277,990 @@ Dismissible(
   child: ListTile(title: Text('Item ${items[index]}')),
 )
 ```
+
+### 用户交互
+
+#### 1. SnackBar 消息提示
+
+##### 概述
+
+SnackBar 是 Flutter 中用于显示简短消息的组件，通常用于提供用户操作的反馈。它会从屏幕底部滑入，并在一段时间后自动消失。
+
+##### 基本实现
+
+```dart
+import 'package:flutter/material.dart';
+
+class SnackBarPage extends StatelessWidget {
+  const SnackBarPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          final snackBar = SnackBar(
+            content: const Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
+              label: 'Undo',
+              onPressed: () {
+                // 撤销操作的代码
+              },
+            ),
+            showCloseIcon: true,
+          );
+
+          // 使用 ScaffoldMessenger 显示 SnackBar
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+        child: const Text('Show SnackBar'),
+      ),
+    );
+  }
+}
+```
+
+##### 关键特性
+
+- **自动消失**: 默认 4 秒后自动隐藏
+- **操作按钮**: 可添加 `SnackBarAction` 提供快速操作
+- **关闭图标**: `showCloseIcon: true` 显示关闭按钮
+- **全局管理**: 通过 `ScaffoldMessenger` 进行管理
+
+##### 使用场景
+
+- 操作成功/失败反馈
+- 撤销操作提示
+- 网络状态通知
+- 表单提交结果
+
+---
+
+#### 2. 输入表单处理
+
+##### 2.1 基础文本输入
+
+###### TextEditingController 管理
+
+```dart
+class TextInputExample extends StatefulWidget {
+  const TextInputExample({super.key});
+
+  @override
+  State<TextInputExample> createState() => _TextInputExample();
+}
+
+class _TextInputExample extends State<TextInputExample> {
+  final myController = TextEditingController();
+  late FocusNode myFocusNode;
+
+  _printText() {
+    final text = myController.text;
+    print('Current text: $text');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    myFocusNode = FocusNode();
+    // 监听文本变化
+    myController.addListener(_printText);
+  }
+
+  @override
+  void dispose() {
+    // 重要：释放资源
+    myController.dispose();
+    myFocusNode.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TextField(
+          controller: myController,
+          onChanged: (e) {
+            print('Text changed: $e');
+          },
+          autofocus: true,
+        ),
+        TextFormField(
+          controller: myController,
+          focusNode: myFocusNode
+        ),
+      ],
+    );
+  }
+}
+```
+
+###### 核心概念
+
+- **TextEditingController**: 控制文本输入的内容
+- **FocusNode**: 管理输入框的焦点状态
+- **监听器**: `addListener()` 监听文本变化
+- **资源管理**: 在 `dispose()` 中释放控制器
+
+##### 2.2 表单验证
+
+```dart
+class FormInputExample extends StatefulWidget {
+  const FormInputExample({super.key});
+
+  @override
+  State<FormInputExample> createState() => _FormInputExample();
+}
+
+class _FormInputExample extends State<FormInputExample> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // 验证表单
+              if (_formKey.currentState!.validate()) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Processing Data')),
+                );
+              }
+            },
+            child: const Text('Submit'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+###### 表单验证要点
+
+- **GlobalKey**: 用于访问 Form 的状态
+- **validator**: 定义验证规则
+- **validate()**: 触发所有字段验证
+- **反馈机制**: 结合 SnackBar 提供用户反馈
+
+#### 3. 用户手势交互
+
+##### 3.1 水波纹效果 (InkWell)
+
+```dart
+class InkWellExample extends StatelessWidget {
+  const InkWellExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: InkWell(
+        onTap: () {
+          // 点击事件处理
+        },
+        child: Container(
+          padding: EdgeInsets.all(16),
+          child: Text('可点击的组件'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+##### 3.2 滑动删除 (Dismissible)
+
+```dart
+class ListCleanExample extends StatefulWidget {
+  const ListCleanExample({super.key});
+
+  @override
+  State<ListCleanExample> createState() => _ListCleanExampleState();
+}
+
+class _ListCleanExampleState extends State<ListCleanExample> {
+  List<ListTile> _tiles = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _tiles = List.generate(
+      100,
+      (index) => ListTile(title: Text('title $index'))
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: _tiles.length,
+      itemBuilder: (context, index) {
+        final item = _tiles[index];
+        return Dismissible(
+          key: Key(item.title.toString()),
+          child: item,
+          onDismissed: (direction) {
+            setState(() {
+              _tiles.removeAt(index);
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('${item.title} 已删除'),
+                  backgroundColor: Colors.red,
+                  duration: Duration(milliseconds: 1000),
+                ),
+              );
+            });
+          },
+        );
+      },
+    );
+  }
+}
+```
+
+###### Dismissible 关键特性
+
+- **唯一 Key**: 每个 Dismissible 需要唯一的 key
+- **滑动方向**: 可设置水平或垂直滑动
+- **删除回调**: `onDismissed` 处理删除逻辑
+- **用户反馈**: 结合 SnackBar 提供删除确认
+
+##### 3.3 拖拽操作 (Drag & Drop)
+
+```dart
+class AppDragExample extends StatefulWidget {
+  const AppDragExample({super.key});
+
+  @override
+  State<AppDragExample> createState() => _AppDragExampleState();
+}
+
+class _AppDragExampleState extends State<AppDragExample> {
+  void _itemDroppedOnCustomerCart({
+    required Item item,
+    required Customer customer,
+  }) {
+    setState(() {
+      customer.items.add(item);
+    });
+  }
+
+  Widget _buildMenuItem({required Item item}) {
+    return LongPressDraggable<Item>(
+      data: item,
+      dragAnchorStrategy: pointerDragAnchorStrategy,
+      feedback: DraggingListItem(
+        dragKey: _draggableKey,
+        photoProvider: item.imageProvider,
+      ),
+      child: MenuListItem(
+        name: item.name,
+        price: item.formattedTotalItemPrice,
+        photoProvider: item.imageProvider,
+      ),
+    );
+  }
+
+  Widget _buildPersonWithDropZone(Customer customer) {
+    return DragTarget<Item>(
+      builder: (context, candidateItems, rejectedItems) {
+        return CustomerCart(
+          hasItems: customer.items.isNotEmpty,
+          highlighted: candidateItems.isNotEmpty,
+          customer: customer,
+        );
+      },
+      onAcceptWithDetails: (details) {
+        _itemDroppedOnCustomerCart(
+          item: details.data,
+          customer: customer
+        );
+      },
+    );
+  }
+}
+```
+
+###### 拖拽实现要点
+
+- **LongPressDraggable**: 长按开始拖拽
+- **DragTarget**: 定义放置目标
+- **feedback**: 拖拽过程中显示的组件
+- **数据传递**: 通过泛型传递拖拽数据
+- **视觉反馈**: 高亮显示拖拽目标
+
+---
+
+#### 4. 最佳实践总结
+
+##### 4.1 资源管理
+
+```dart
+@override
+void dispose() {
+  // 控制器
+  myController.dispose();
+  // 焦点节点
+  myFocusNode.dispose();
+  // 定时器
+  timer?.cancel();
+  super.dispose();
+}
+```
+
+##### 4.2 性能考虑
+
+###### 列表优化
+
+```dart
+ListView.builder(
+  itemCount: items.length,
+  itemBuilder: (context, index) {
+    // 只构建可见项目
+    return buildItem(items[index]);
+  },
+)
+```
+
+###### 状态管理
+
+- 避免不必要的 `setState()` 调用
+- 使用 `const` 构造函数优化性能
+- 合理使用 `GlobalKey`
+
+##### 4.3 可访问性
+
+```dart
+Semantics(
+  button: true,
+  label: '删除按钮',
+  child: IconButton(
+    onPressed: onDelete,
+    icon: Icon(Icons.delete),
+  ),
+)
+```
+
+##### 4.4 错误处理
+
+```dart
+try {
+  await submitForm();
+  _showSuccessSnackBar();
+} catch (e) {
+  _showErrorSnackBar(e.toString());
+}
+```
+
+### 路由导航
+
+#### 1 基础路由导航
+
+Flutter 使用 `Navigator` 类来管理页面间的导航，它采用栈（Stack）的方式管理路由：
+
+- `Navigator.push()` - 推入新页面
+- `Navigator.pop()` - 弹出当前页面
+- `Navigator.pushReplacement()` - 替换当前页面
+
+```dart
+class FirstRoute extends StatelessWidget {
+  const FirstRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('First Route')),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            // 导航到第二个页面
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SecondRoute(),
+                settings: RouteSettings(arguments: 'Hello from FirstRoute'),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // 接收传递的参数
+    final String? _message =
+        ModalRoute.of(context)?.settings.arguments as String?;
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('Second Route')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // 显示接收到的消息
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(_message ?? 'No message'))
+            );
+            // 返回上一页面
+            Navigator.pop(context);
+          },
+          child: const Text('go back'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+MaterialPageRoute
+
+- 提供平台特定的过渡动画
+- iOS：右滑进入，Android：底部上滑
+
+RouteSettings
+
+- 用于传递路由参数和配置
+- `arguments` 属性用于传递数据
+
+ModalRoute.of(context)
+
+- 获取当前路由信息
+- 访问传递的参数
+
+#### 2. 抽屉导航（Drawer）
+
+抽屉导航提供了侧边菜单功能，通常用于应用的主要导航选项。它会从屏幕左侧滑出，提供便捷的导航体验。
+
+```dart
+class DrawerExample extends StatelessWidget {
+  const DrawerExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.all(8.0),
+        children: [
+          // 抽屉头部
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.blue),
+            child: Text(
+              'Drawer Header',
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+          ),
+          // 菜单项
+          ListTile(
+            title: const Text('Item 1'),
+            onTap: () {
+              Navigator.pop(context); // 关闭抽屉
+            },
+          ),
+          ListTile(
+            title: const Text('Item 2'),
+            onTap: () {
+              Navigator.pop(context); // 关闭抽屉
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+集成抽屉到页面
+
+```dart
+class DrawerExamplePage extends StatelessWidget {
+  const DrawerExamplePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Drawer Example')),
+      drawer: const DrawerExample(), // 添加抽屉
+      body: Center(
+        child: Builder(
+          builder: (context) {
+            return ElevatedButton(
+              onPressed: () {
+                // 通过代码打开抽屉
+                Scaffold.of(context).openDrawer();
+              },
+              child: const Text('Open Drawer'),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
+打开方式
+
+1. **自动**: AppBar 自动显示菜单图标
+2. **手势**: 从左边缘右滑
+3. **编程**: `Scaffold.of(context).openDrawer()`
+
+DrawerHeader 组件
+
+- 提供抽屉顶部的标题区域
+- 可自定义背景颜色和内容
+- 通常显示应用 Logo 或用户信息
+
+#### 3. 页面间数据传递
+
+Flutter 提供多种方式在页面间传递数据：
+
+- 正向传递：通过构造函数或 RouteSettings
+- 反向传递：通过 Navigator.pop()返回值
+
+##### 3.1 异步数据返回示例
+
+```dart
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Returning Data Demo')),
+      body: const Center(child: SelectionButton()),
+    );
+  }
+}
+
+class SelectionButton extends StatefulWidget {
+  const SelectionButton({super.key});
+
+  @override
+  State<SelectionButton> createState() => _SelectionButtonState();
+}
+
+class _SelectionButtonState extends State<SelectionButton> {
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        _navigateAndDisplaySelection(context);
+      },
+      child: const Text('Pick an option, any option!'),
+    );
+  }
+
+  // 异步导航并等待返回结果
+  Future<void> _navigateAndDisplaySelection(BuildContext context) async {
+    ScaffoldMessenger.of(context).removeCurrentSnackBar();
+
+    // Navigator.push 返回 Future，在调用 Navigator.pop 时完成
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const SelectionScreen()),
+    );
+
+    if (!context.mounted) return;
+
+    // 处理返回的结果
+    if (result != null) {
+      ScaffoldMessenger.of(context)
+        ..removeCurrentSnackBar()
+        ..showSnackBar(SnackBar(content: Text('You selected: $result')));
+    }
+  }
+}
+```
+
+##### 3.2 选择页面实现
+
+```dart
+class SelectionScreen extends StatelessWidget {
+  const SelectionScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Pick an option')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: ElevatedButton(
+                onPressed: () {
+                  // 返回数据给上一个页面
+                  Navigator.pop(context, 'Yep!');
+                },
+                child: const Text('Yep!'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: ElevatedButton(
+                onPressed: () {
+                  // 返回数据给上一个页面
+                  Navigator.pop(context, 'Nope.');
+                },
+                child: const Text('Nope.'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+##### 3.3 数据传递方式总结
+
+###### 1. 正向传递（父 → 子）
+
+```dart
+// 方式1：构造函数传递
+Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => DetailPage(data: myData),
+  ),
+);
+
+// 方式2：RouteSettings传递
+Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => DetailPage(),
+    settings: RouteSettings(arguments: myData),
+  ),
+);
+```
+
+###### 2. 反向传递（子 → 父）
+
+```dart
+// 子页面：返回数据
+Navigator.pop(context, resultData);
+
+// 父页面：接收数据
+final result = await Navigator.push(context, route);
+if (result != null) {
+  // 处理返回的数据
+}
+```
+
+---
+
+#### 4. 最佳实践与总结
+
+##### 4.1 导航最佳实践
+
+###### 1. 异步安全检查
+
+```dart
+Future<void> navigate() async {
+  final result = await Navigator.push(context, route);
+  if (!context.mounted) return; // 检查context是否仍然有效
+  // 使用result...
+}
+```
+
+###### 2. 统一路由管理
+
+```dart
+class AppRoutes {
+  static const String home = '/home';
+  static const String detail = '/detail';
+
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case home:
+        return MaterialPageRoute(builder: (_) => HomePage());
+      case detail:
+        return MaterialPageRoute(builder: (_) => DetailPage());
+      default:
+        return MaterialPageRoute(builder: (_) => NotFoundPage());
+    }
+  }
+}
+```
+
+##### 4.2 抽屉导航最佳实践
+
+###### 1. 响应式设计
+
+```dart
+class ResponsiveDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    if (MediaQuery.of(context).size.width > 600) {
+      return NavigationRail(); // 桌面端使用导航栏
+    } else {
+      return Drawer(); // 移动端使用抽屉
+    }
+  }
+}
+```
+
+###### 2. 状态管理
+
+```dart
+class DrawerMenu extends StatelessWidget {
+  final String currentRoute;
+
+  const DrawerMenu({required this.currentRoute});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          DrawerHeader(/*...*/),
+          ListTile(
+            title: Text('Home'),
+            selected: currentRoute == '/home',
+            onTap: () {
+              Navigator.pop(context);
+              if (currentRoute != '/home') {
+                Navigator.pushNamed(context, '/home');
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+##### 4.3 性能优化
+
+###### 1. 延迟加载
+
+```dart
+Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => const LazyLoadedPage(),
+    settings: RouteSettings(name: '/lazy'),
+  ),
+);
+```
+
+###### 2. 预加载关键页面
+
+```dart
+void preloadImportantPages() {
+  precacheImage(AssetImage('assets/important_image.png'), context);
+}
+```
+
+### 数据持久化
+
+Flutter 提供了多种数据持久化方案，每种方案都有其特定的适用场景。本学习记录总结了四种主要的持久化技术：SharedPreferences、FlutterSecureStorage、本地文件存储和 SQLite 数据库。
+
+#### 1. SharedPreferences - 轻量级键值对存储
+
+##### 📦 依赖配置
+
+```yaml
+dependencies:
+  shared_preferences: ^2.0.15
+```
+
+##### 🎯 核心特点
+
+- **平台实现**：Android 使用 SharedPreferences API，iOS 使用 NSUserDefaults
+- **数据格式**：简单键值对（String、int、bool、double、List\<String\>）
+- **存储方式**：XML 文件（Android）或 plist 文件（iOS）
+- **访问方式**：异步操作，通过 Platform Channels 通信
+
+##### 💡 适用场景
+
+- ✅ 用户偏好设置（主题、语言、字体大小）
+- ✅ 状态标记（是否看过引导页、是否同意协议）
+- ✅ 轻量级缓存（搜索历史关键词）
+- ❌ 不适合大量或复杂数据
+
+##### 🔧 核心 API 使用
+
+```dart
+// 获取实例
+final prefs = await SharedPreferences.getInstance();
+
+// 读取数据
+int counter = prefs.getInt('counter') ?? 0;
+
+// 写入数据
+await prefs.setInt('counter', counter);
+```
+
+#### 2. Flutter Secure Storage - 安全敏感数据存储
+
+##### 📦 依赖配置
+
+```yaml
+dependencies:
+  flutter_secure_storage: ^9.0.0
+```
+
+##### 🎯 核心特点
+
+- **安全性**：使用系统级加密存储
+- **数据保护**：适用于密码、API 密钥等敏感信息
+- **访问控制**：提供生物识别等额外安全层
+- **平台集成**：深度集成系统安全机制
+
+##### 💡 适用场景
+
+- ✅ 用户登录凭证（用户名、密码、Token）
+- ✅ API 密钥和数据库密码
+- ✅ 个人隐私信息
+- ❌ 不适合频繁读写的数据
+
+##### 🔧 核心 API 使用
+
+```dart
+// 创建实例
+const storage = FlutterSecureStorage();
+
+// 写入敏感数据
+await storage.write(key: 'api_secret_key', value: secretValue);
+
+// 读取数据
+String? value = await storage.read(key: 'api_secret_key');
+
+// 删除数据
+await storage.delete(key: 'api_secret_key');
+```
+
+#### 3. 本地文件存储 - 灵活的文件操作
+
+##### 📦 依赖配置
+
+```yaml
+dependencies:
+  path_provider: ^2.0.0 # 获取系统路径
+```
+
+##### 🎯 核心特点
+
+- **灵活性**：支持任意格式数据（文本、JSON、二进制）
+- **跨平台**：使用 path_provider 解决路径差异
+- **直接控制**：完全控制文件读写过程
+- **存储位置**：应用专属目录
+
+##### 💡 适用场景
+
+- ✅ 缓存 API 响应（复杂 JSON 数据）
+- ✅ 用户生成内容（笔记、绘图数据、日志）
+- ✅ 应用配置文件
+- ✅ 离线数据缓存
+
+##### 🔧 核心 API 使用
+
+```dart
+// 获取应用目录
+final directory = await getApplicationDocumentsDirectory();
+final file = File('${directory.path}/data.json');
+
+// 写入文件
+await file.writeAsString(jsonEncode(data));
+
+// 读取文件
+if (await file.exists()) {
+  final contents = await file.readAsString();
+  final data = jsonDecode(contents);
+}
+
+// 删除文件
+await file.delete();
+```
+
+#### 4. SQLite 数据库 - 结构化数据管理
+
+##### 📦 依赖配置
+
+```yaml
+dependencies:
+  sqflite: ^2.0.3
+  path: ^1.8.2
+```
+
+##### 🎯 核心特点
+
+- **关系型数据库**：支持复杂的 SQL 查询操作
+- **高性能**：针对大量数据优化
+- **ACID 特性**：保证数据一致性和完整性
+- **灵活查询**：支持联表、聚合、索引等高级功能
+
+##### 💡 适用场景
+
+- ✅ 数据密集型应用（记账、TODO、日记）
+- ✅ 需要复杂查询的应用（多条件筛选、排序）
+- ✅ 离线优先应用（本地缓存+同步）
+- ✅ 多表关联数据
+
+##### 🔧 核心实现模式
+
+数据模型设计
+
+```dart
+class Dog {
+  final int id;
+  final String name;
+  final int age;
+
+  Dog({required this.id, required this.name, required this.age});
+
+  Map<String, dynamic> toMap() {
+    return {'id': id, 'name': name, 'age': age};
+  }
+}
+```
+
+数据库工具类（单例模式）
+
+```dart
+class DataBaseHelper {
+  static final DataBaseHelper _instance = DataBaseHelper._internal();
+  factory DataBaseHelper() => _instance;
+  static Database? _database;
+  DataBaseHelper._internal();
+
+  Future<Database> get database async {
+    if (_database != null) return _database!;
+    _database = await _initDatabase();
+    return _database!;
+  }
+}
+```
+
+#### 🎯 选择指南
+
+| 存储方案          | 数据量 | 复杂度 | 安全性 | 查询能力 | 适用场景   |
+| ----------------- | ------ | ------ | ------ | -------- | ---------- |
+| SharedPreferences | 小     | 简单   | 一般   | 键值查找 | 用户设置   |
+| Secure Storage    | 小     | 简单   | 高     | 键值查找 | 敏感信息   |
+| 本地文件          | 中等   | 中等   | 一般   | 文件操作 | 缓存数据   |
+| SQLite            | 大     | 复杂   | 一般   | SQL 查询 | 结构化数据 |

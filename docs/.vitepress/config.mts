@@ -20,6 +20,10 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    outline: {
+      level: [2, 4], // 显示h2到h4级别的标题
+      label: "本页目录",
+    },
     nav: [
       { text: "🏠 Home", link: "/" },
       { text: "👤 About", link: "/about/关于我" },
@@ -46,6 +50,14 @@ export default defineConfig({
             text: "项目搭建工程师",
             link: "/ai/项目搭建工程师",
           },
+          {
+            text: "NSFW",
+            link: "/ai/NSFW",
+          },
+          {
+            text: "编程辅助",
+            link: "/ai/编程辅助",
+          },
         ],
       },
       {
@@ -55,6 +67,7 @@ export default defineConfig({
             text: "计算机网络",
             link: "/guide/计算机网络/深入浅出：从 TCP 到 HTTP，再到 HTTPS 的演进之路",
           },
+
           {
             text: "技术堆栈",
             link: "/guide/技术堆栈/Flutter/Flutter学习记录",
@@ -82,6 +95,8 @@ export default defineConfig({
             { text: "产品原型设计", link: "产品原型设计" },
             { text: "PROMPT助手", link: "PROMPT助手" },
             { text: "项目搭建工程师", link: "项目搭建工程师" },
+            { text: "NSFW", link: "NSFW" },
+            { text: "编程辅助", link: "编程辅助" },
           ],
         },
       ],
@@ -112,7 +127,10 @@ export default defineConfig({
               text: "Flutter",
               base: "/guide/技术堆栈/Flutter/",
               collapsed: false,
-              items: [{ text: "Flutter学习记录", link: "Flutter学习记录" }],
+              items: [
+                { text: "Flutter学习记录", link: "Flutter学习记录" },
+                { text: "Dart相关", link: "Dart相关" },
+              ],
             },
             {
               text: "TypeScript",

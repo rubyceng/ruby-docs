@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3ff84e29a7a1c72d",
+        "id": "f0ce894d7e6e67f5",
         "type": "tabs",
         "children": [
           {
-            "id": "b24647d1ab16dc2f",
+            "id": "c6ec2e074e1ca997",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "guide/技术堆栈/Flutter/Flutter学习记录.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Flutter学习记录"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "guide/技术堆栈/Flutter/Flutter学习记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "Flutter学习记录 的反向链接列表"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "guide/技术堆栈/Flutter/Flutter学习记录.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "Flutter学习记录 的出链列表"
             }
           },
           {
@@ -136,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "guide/技术堆栈/Flutter/Flutter学习记录.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Flutter学习记录 的大纲"
             }
           }
         ],
@@ -161,13 +168,17 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b24647d1ab16dc2f",
+  "active": "4f555917309d1a09",
   "lastOpenFiles": [
+    "guide/技术堆栈/Flutter/Dart相关.md",
+    "guide/技术堆栈/Flutter/Dart相关学习记录.md",
+    "guide/技术堆栈/Flutter/Flutter学习记录.md",
+    "ai/编程辅助.md",
+    "ai/NSFW.md",
     "ai/项目搭建工程师.md",
     "ai/ERP项目学习.md",
     "ai/PROMPT助手.md",
     "ai/产品原型设计.md",
-    "guide/技术堆栈/Flutter/Flutter学习记录.md",
     "beyond_code/MacOS个人配置.md",
     "ai",
     "AI/ERP项目学习.md",

@@ -1,6 +1,6 @@
 ---
 Title: ERP项目学习
-Draft: true
+Draft: false
 tags:
   - AI
   - prompt
