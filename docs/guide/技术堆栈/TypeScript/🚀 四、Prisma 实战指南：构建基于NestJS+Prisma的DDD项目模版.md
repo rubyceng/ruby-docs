@@ -9,6 +9,14 @@ tags:
 Author: Ruby Ceng
 ---
 
+## 📦 源码获取
+
+本文涉及的完整项目模版已开源，您可以通过以下方式获取：
+
+### GitHub 仓库
+
+🔗 **项目地址**：[prisma_nestjs_example](https://github.com/rubyceng/ruby-project-example/tree/main/prisma_nestjs_example)
+
 ## 🎯 引言
 
 在软件开发的征途中，我们总在寻求那个"更好"的起点——一个结构清晰、高度可扩展、能够驾驭业务复杂性的项目模版。一个简单的 `nest new` 固然能让我们快速启动，但它离一个能支撑企业级应用的专业架构还有很长的路。
@@ -488,11 +496,3 @@ export class ProductService {
 2. **配置你的数据库**，修改 `.env` 文件
 3. **删除或重命名** `src/modules/product` 示例模块
 4. **创建你自己的业务模块**，例如 `user` 或 `inventory`，完全遵循 `product` 模块的分层结构和编码范式
-
-## 📦 源码获取
-
-本文涉及的完整项目模版已开源，您可以通过以下方式获取：
-
-### GitHub 仓库
-
-🔗 **项目地址**：[prisma_nestjs_example](https://github.com/rubyceng/ruby-project-example/tree/main/prisma_nestjs_example)

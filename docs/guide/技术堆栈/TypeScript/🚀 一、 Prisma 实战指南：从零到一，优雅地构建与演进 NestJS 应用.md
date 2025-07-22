@@ -7,6 +7,14 @@ tags:
 Author: Ruby Ceng
 ---
 
+## 📦 源码获取
+
+本文涉及的完整项目模版已开源，您可以通过以下方式获取：
+
+### GitHub 仓库
+
+🔗 **项目地址**：[prisma_todo_example](https://github.com/rubyceng/ruby-project-example/tree/main/prisma_todo_example)
+
 ## 引言
 
 在现代后端开发中，与数据库的交互是不可或缺的核心环节。一个强大而易用的 ORM (对象关系映射) 工具能极大地提升开发效率和代码质量。Prisma 正是这个领域的佼佼者，它通过 **类型安全**、**自动生成** 和 **直观的迁移系统**，正在彻底改变我们与数据库打交道的方式。
@@ -239,11 +247,3 @@ async findPlanById(id: number) {
 4.  **🔁 重复**: 当新的需求到来时，回到第一步，开始新的循环。
 
 这个清晰、可预测且安全的工作流，正是 Prisma 强大的原因。它将数据库管理的复杂性降到了最低，让开发者可以更专注于业务逻辑的实现。
-
-## 📦 源码获取
-
-本文涉及的完整项目模版已开源，您可以通过以下方式获取：
-
-### GitHub 仓库
-
-🔗 **项目地址**：[prisma_todo_example](https://github.com/rubyceng/ruby-project-example/tree/main/prisma_todo_example)

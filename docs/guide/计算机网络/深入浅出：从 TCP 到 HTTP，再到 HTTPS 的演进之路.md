@@ -6,6 +6,12 @@ Tags:
 Author: Ruby Ceng
 ---
 
+## 参考资料
+
+- [Let's Encrypt 官方文档](https://letsencrypt.org/docs/)
+- [OpenSSL 官方文档](https://www.openssl.org/docs/)
+- [NGINX HTTPS 配置指南](https://nginx.org/en/docs/http/configuring_https_servers.html)
+
 ## 引言
 
 在互联网世界中，我们每天都在进行着各种各样的网络活动：浏览网页、发送消息、在线购物等等。这些看似简单的操作背后，都离不开一系列复杂的网络协议在默默地工作。今天，我们就来深入浅出地聊聊互联网通信中最重要的几个协议：TCP、HTTP 和 HTTPS，并探索它们之间的关系与演进。
@@ -220,9 +226,3 @@ server {
 ## 总结
 
 SSL/TLS 是现代网络安全的基石，通过在 TCP 层之上添加加密层，有效保护了数据传输的安全性。无论是使用自签证书还是第三方证书，正确配置 SSL/TLS 都能显著提升网站的安全性，防止数据被窃听和篡改。
-
-## 参考资料
-
-- [Let's Encrypt 官方文档](https://letsencrypt.org/docs/)
-- [OpenSSL 官方文档](https://www.openssl.org/docs/)
-- [NGINX HTTPS 配置指南](https://nginx.org/en/docs/http/configuring_https_servers.html)

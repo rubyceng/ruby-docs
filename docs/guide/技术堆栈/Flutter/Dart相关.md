@@ -8,8 +8,9 @@ tags:
 Author: Ruby Ceng
 ---
 
-> Dart 语言 JavaScript 工程师迁移学习文档：
-> `https://dart.dev/resources/coming-from/js-to-dart#conventions-and-linting`
+## 相关文档
+
+> Dart 语言 JavaScript 工程师迁移学习文档：`https://dart.dev/resources/coming-from/js-to-dart#conventions-and-linting`
 
 ## Dart 数据类型
 

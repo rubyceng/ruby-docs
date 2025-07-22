@@ -7,6 +7,11 @@ tags:
 Author: Ruby Ceng
 ---
 
+## 相关文章
+
+- [https://www.mehdi-khalili.com/orm-anti-patterns-part-1-active-record](https://www.mehdi-khalili.com/orm-anti-patterns-part-1-active-record)
+- [https://kore-nordmann.de/blog/why_active_record_sucks.html](https://kore-nordmann.de/blog/why_active_record_sucks.html)
+
 ## 引言
 
 在与数据库打交道的应用开发中，[对象关系映射（ORM）](https://zh.wikipedia.org/wiki/对象关系映射)是不可或缺的一环。它允许我们使用面向对象的方式来操作数据库，而不是手写繁琐的 SQL 语句。在众多 ORM 实现中，其核心思想主要源于两种经典的设计模式：**Active Record** 和 **Data Mapper**。理解这两种模式的差异，能帮助我们根据项目需求选择最合适的工具和架构。
@@ -432,8 +437,3 @@ async function main() {
 ## 四、结论
 
 虽然 **Data Mapper** 模式需要编写更多的代码（一个领域类、一个实体类、一个仓库类），但对于具有一定复杂性、需要长期维护和演进的系统来说，这种前期投入所换来的架构清晰度、可维护性和健壮性是完全值得的。
-
-## 五、相关文章
-
-- [https://www.mehdi-khalili.com/orm-anti-patterns-part-1-active-record](https://www.mehdi-khalili.com/orm-anti-patterns-part-1-active-record)
-- [https://kore-nordmann.de/blog/why_active_record_sucks.html](https://kore-nordmann.de/blog/why_active_record_sucks.html)
