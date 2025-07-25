@@ -1,13 +1,15 @@
 ---
-Title: Soybean Admin NestJS 学习（1）：基础入门与环境搭建
+Title: Soybean Admin NestJS 学习(1)：基础入门与环境搭建
 Draft: false
 tags:
   - ERP
   - 开源项目
+  - TypeScript
+  - NestJS
 Author: Ruby Ceng
 ---
 
-# Soybean Admin NestJS 学习（1）：基础入门与环境搭建
+# Soybean Admin NestJS 学习(1)：基础入门与环境搭建
 
 ## 1. 项目初始化
 
